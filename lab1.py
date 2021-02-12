@@ -57,7 +57,7 @@ class Solution:
        # TODO How many items were orderd in total?
        print(self.chipo['quantity'].sum())
     
-       return -1
+       return self.chipo['quantity'].sum()
    
     def total_sales(self) -> float:
         # TODO 
@@ -77,7 +77,7 @@ class Solution:
     
         # 1. Create a lambda function to change all item prices to float.
         # 2. Calculate total sales.
-        return 0.0
+        return toatal_sales_value.sum()
    
     def num_orders(self) -> int:
         # TODO
@@ -96,7 +96,7 @@ class Solution:
         toatal_sales_value = item_numbers * item_price_float
         avg = (toatal_sales_value.sum())/self.chipo['order_id'].nunique()
         print(round(avg,2))
-        return 0.0
+        return round(avg,2)
 
     def num_different_items_sold(self) -> int:
         # TODO
@@ -104,7 +104,7 @@ class Solution:
         y = self.chipo.item_name.unique()
         print(len(y))
         
-        # return 
+        return (len(y))
     
     def plot_histogram_top_x_popular_items(self, x:int) -> None:
         from collections import Counter
@@ -183,16 +183,13 @@ def test() -> None:
     total = solution.total_item_orders()
     
     # assert total == 4972
-    # assert 39237.02 ==
-    solution.total_sales()
+    assert 39237.02 ==solution.total_sales()
    
-    # assert 1834 ==
+    assert 1834 ==solution.num_orders()
     print(solution.num_orders())
     
-    # assert 21.39 == 
-    solution.average_sales_amount_per_order()
-    # assert 50 == 
-    solution.num_different_items_sold()
+    assert 21.39 == solution.average_sales_amount_per_order()
+    assert 50 ==  solution.num_different_items_sold()
     solution.plot_histogram_top_x_popular_items(5)
     solution.scatter_plot_num_items_per_order_price()
     

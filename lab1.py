@@ -13,7 +13,7 @@ class Solution:
     def top_x(self, count) -> None:
         # TODO
         # Top x number of entries from the dataset and display as markdown format.
-        topx = self.chipo.head()
+        topx = self.chipo.head(count)
         print(topx.to_markdown())
         
     def count(self) -> int:
@@ -35,6 +35,7 @@ class Solution:
     
     def print_columns(self) -> None:
         # TODO Print the name of all the columns.
+        # print(self.chipo.columns)
         for col in self.chipo.columns:
             print(col)
         pass
@@ -55,7 +56,7 @@ class Solution:
 
     def total_item_orders(self) -> int:
        # TODO How many items were orderd in total?
-       print(self.chipo['quantity'].sum())
+    #    print(self.chipo['quantity'].sum())
     
        return self.chipo['quantity'].sum()
    
@@ -73,7 +74,7 @@ class Solution:
          
         
         # print(toatal_sales_value)
-        print(toatal_sales_value.sum())
+        # print(toatal_sales_value.sum())
     
         # 1. Create a lambda function to change all item prices to float.
         # 2. Calculate total sales.
@@ -95,14 +96,14 @@ class Solution:
                 
         toatal_sales_value = item_numbers * item_price_float
         avg = (toatal_sales_value.sum())/self.chipo['order_id'].nunique()
-        print(round(avg,2))
+        # print(round(avg,2))
         return round(avg,2)
 
     def num_different_items_sold(self) -> int:
         # TODO
         # How many different items are sold?
         y = self.chipo.item_name.unique()
-        print(len(y))
+        # print(len(y))
         
         return (len(y))
     
@@ -113,7 +114,7 @@ class Solution:
         
         temp = pd.DataFrame.from_dict(self.chipo)
         temp= temp.sort_values(by=['quantity'], ascending=False)
-        print(temp[:5])
+        # print(temp[:5])
         temp1 = temp[:5]
         temp2 = temp1.plot.bar(x='item_name', y='quantity', title='Most popular items')
         plt.show(block=True)
@@ -165,11 +166,11 @@ def test() -> None:
     count = solution.count()
     print(count)
     
- #   assert count == 4622
+    assert count == 4622
     solution.info()
     
     count = solution.num_column()
-    print(count)
+    # print(count)
     print_column = solution.print_columns()
     
     # assert count == 5
@@ -186,7 +187,7 @@ def test() -> None:
     assert 39237.02 ==solution.total_sales()
    
     assert 1834 ==solution.num_orders()
-    print(solution.num_orders())
+    # print(solution.num_orders())
     
     assert 21.39 == solution.average_sales_amount_per_order()
     assert 50 ==  solution.num_different_items_sold()

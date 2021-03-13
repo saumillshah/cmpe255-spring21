@@ -98,4 +98,4 @@ df_val['msrp'] = y_val_orig
 
 df_val['msrp_pred'] = predictions
 
-print(df_val[['make', 'model', 'engine_cylinders', 'transmission_type', 'driven_wheels', 'number_of_doors','market_category', 'vehicle_size', 'vehicle_style', 'highway_mpg', 'city_mpg', 'popularity', 'msrp', 'msrp_pred']].head().to_markdown())
+print(df_val[['engine_cylinders', 'transmission_type', 'driven_wheels', 'number_of_doors','market_category', 'vehicle_size', 'vehicle_style', 'highway_mpg', 'city_mpg', 'popularity', 'msrp', 'msrp_pred']].head().to_markdown())

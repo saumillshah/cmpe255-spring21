@@ -1,0 +1,33 @@
+Polynomial regression:
+
+Degree 2:
+The model performance for the training set
+RMSE of training set is 5.552029848936066
+R2 score of training set is 0.6411591817537179
+The model performance for the test set
+RMSE of test set is 5.332315656621563
+R2 score of test set is 0.6368350327760253
+
+Degree 20:
+The model performance for the training set
+RMSE of training set is 7.775790291261152
+R2 score of training set is 0.2961383026578239
+The model performance for the test set
+RMSE of test set is 69.9149629618904
+R2 score of test set is -61.4327565728179
+
+Linear regression:
+
+The model performance for training set
+RMSE is 6.201452973865344
+R2 score is 0.552301990803739
+The model performance for testing set
+RMSE is 6.230716573098682
+R2 score is 0.5041523728903131
+
+Multiple regression:
+
+The model performance for testing set
+RMSE is 4.913937534764081
+R2 score is 0.6915878280744173
+Adjusted R Squared Value is  0.6821466391379198
